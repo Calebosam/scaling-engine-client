@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import logo from '../assets/image.png'
 import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
 
-    const posts = [{id: 1, data: "happy"}]
-    const books = [{id: 1, data: "joy"}]
-    const users = [{id: 1, data: "sing"}]
-    const [items, setItems] = useState([])
+    const posts = 10
+    const books = 15
+    const users = 23
+
     const navigate = useNavigate()
   return (
     <>
@@ -24,15 +24,19 @@ const Home = () => {
         <button style={{marginRight: "20px"}}onClick={() => setItems(posts)}>
           Posts Service
         </button>
-        <button onClick={() => setItems(books)}>
+        <button onClick={() => navigate("/books")}>
           Books Service
         </button>
-        <p>
-          {items?.map((el) => <ul key={el.id}> {el.data} </ul>)}
-        </p>
+        <div >
+        <div style={{display: "inline-block", width: "100px", backgroundColor: "red"}}>{users}</div>
+        <div style={{display: "inline-block", width: "100px"}}>{posts}</div>
+        <div style={{display: "inline-block", width: "100px"}}>{books}</div>
+
+        </div>
+        
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Explore the Capabilities of this app
       </p>
     </>
   )

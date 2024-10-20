@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const API_URL = 'http://localhost:3000/users';
 
 const UserService = () => {
+  const navigate = useNavigate()
   const [users, setUsers] = useState([]);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -63,6 +65,7 @@ const UserService = () => {
 
   return (
     <div>
+        <button onClick={() => navigate("/")}>Back</button>
       <h1>User Management</h1>
 
       {/* Create new user */}

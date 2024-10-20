@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import logo from '../assets/image.png'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
 
@@ -7,6 +8,7 @@ const Home = () => {
     const books = [{id: 1, data: "joy"}]
     const users = [{id: 1, data: "sing"}]
     const [items, setItems] = useState([])
+    const navigate = useNavigate()
   return (
     <>
       <div>
@@ -16,7 +18,7 @@ const Home = () => {
       </div>
       <h1>Scaling Engine</h1>
       <div className="card">
-        <button style={{marginRight: "20px"}} onClick={() => setItems(users)}>
+        <button style={{marginRight: "20px"}} onClick={() => navigate("/users")}>
           User Service
         </button>
         <button style={{marginRight: "20px"}}onClick={() => setItems(posts)}>
